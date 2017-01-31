@@ -121,7 +121,7 @@
            <schema_name/>
            </partitioning>
     <connection>Launch</connection>
-    <sql>SELECT name, ownable_id AS organization_id, details-&#x3e;&#x3e;&#x27;claimable&#x27; AS managed, created_at, updated_at FROM profiles WHERE type &#x3d; &#x27;OrganizationProfile&#x27;&#x3b;</sql>
+    <sql>SELECT &#xa;  name&#xa;, ownable_id AS organization_id&#xa;, details-&#x3e;&#x3e;&#x27;claimable&#x27; AS managed&#xa;, created_at&#xa;, updated_at &#xa;FROM profiles &#xa;WHERE type &#x3d; &#x27;OrganizationProfile&#x27;&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
