@@ -480,7 +480,7 @@
       <schema_name/>
     </partitioning>
     <connection>Launch</connection>
-    <sql>SELECT &#xa;  job_id AS id&#xa;, COUNT&#x28;DISTINCT&#x28;career_profile_id&#x29;&#x29; &#xa;AS &#xa;  active_candidates_count &#xa;FROM &#xa;  match_records &#xa;INNER JOIN &#xa;  jobs &#xa;ON &#xa;  jobs.id &#x3d; match_records.job_id &#xa;WHERE &#xa;  jobs.activated_at &#x3c; match_records.created_at&#xa;OR&#xa;  jobs.activated_at IS NULL &#xa;GROUP BY &#xa;  job_id &#xa;ORDER BY &#xa;  COUNT&#x28;DISTINCT&#x28;career_profile_id&#x29;&#x29;&#x3b;</sql>
+    <sql>SELECT &#xa;  job_id AS id&#xa;, COUNT&#x28;DISTINCT&#x28;career_profile_id&#x29;&#x29; &#xa;AS &#xa;  active_candidates_count &#xa;FROM &#xa;  match_records &#xa;INNER JOIN &#xa;  jobs &#xa;ON &#xa;  jobs.id &#x3d; match_records.job_id &#xa;WHERE &#xa;  match_records.created_at &#x3e; jobs.created_at&#xa;OR&#xa;  jobs.activated_at IS NULL &#xa;GROUP BY &#xa;  job_id &#xa;ORDER BY &#xa;  COUNT&#x28;DISTINCT&#x28;career_profile_id&#x29;&#x29;&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
